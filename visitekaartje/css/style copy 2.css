@@ -85,9 +85,8 @@ meter {
 
 
 
-/**********/
-/* Fonts */
-/*********/
+
+
 
 @font-face {
    font-family: 'Monument Extended';
@@ -97,41 +96,38 @@ meter {
    font-style: bold;
  }
 
+ 
 
 
-/*********************/
-/* Custom Properties */
-/*********************/
+
+
 
 :root {
-   --primary-font: 'Open Sans', serif;
-   --primary-font-color: white;
+   --bc-primary-font: 'Open Sans', serif;
+   --bc-secondary-font: 'Monument Extended', serif;
 
-   --secondary-font: 'Monument Extended', serif;
-   --secondary-font-color: #F1F1F3;
+   --bc-nav-font-size: 1.8rem;
+   --bc-greetings-font-size: 5rem;
 
-   --nav-font-size: 1.8rem;
+   --bc-primary-font-color: white;
 
-   --greetings-font-size: 5rem;
-
-   --primary-bg-color: #7322E1;
+   --bc-bg-color: #7322E1;
 
    --icon-color: #B5B5BD;
-   --links-color: #B5B5BD;
-   --links-border-color: #4B4A4F;
-
-   --label-primary-font-color: white;
 
    --secondary-bg-color: #111114;
-   --secondary-accent-color: #201E25;
+   --bc-secondary-accent-color: #201E25;
+
+   --bc-secondary-font-color: #F1F1F3;
+   --bc-secondary-border-color: #4B4A4F;
+
+   --M-spacer: 4rem;
 }
 
 
 
 
-/********/
-/* Body */
-/********/
+
 
 html, body {
    height: 100%;
@@ -147,14 +143,14 @@ body {
    align-items: center;
    justify-content: center;
 
-   background-color: var(--secondary-accent-color);
+   background-color: var(--bc-bg-color);
 }
 
 
 
-/********/
-/* Main */
-/********/
+
+
+
 
 main {
    position: absolute;
@@ -164,7 +160,7 @@ main {
 }
 
 
-/* Navigatie */
+
 
 main section:nth-child(1) nav {
    display: flex;
@@ -185,16 +181,16 @@ main section:nth-child(1) nav ul {
 }
 
 main section:nth-child(1) nav ul li {
-   font-family: var(--primary-font);
-   font-size: var(--nav-font-size);
+   font-family: var(--bc-primary-font);
+   font-size: var(--bc-nav-font-size);
 
-   color: var(--primary-font-color);
+   color: var(--bc-primary-font-color);
 
    text-decoration: none;
 }
 
 
-/* Voorkant Kaart */
+
 
 main section:nth-child(1) {
    backface-visibility: hidden;
@@ -213,15 +209,13 @@ main section:nth-child(1) {
    width: 100%;
    height: 100%;
 
-   background-color: var(--primary-bg-color);
+   background-color: var(--bc-bg-color);
 
    box-shadow:
    6.7px 6.7px 23.3px rgba(0, 0, 0, 0.032),
    22.3px 22.3px 78.2px rgba(0, 0, 0, 0.048),
    100px 100px 350px rgba(0, 0, 0, 0.08);
 }
-
-/* Mijn Klikbare Hoofd */
 
 main section:nth-child(1) button {
    position: absolute;
@@ -239,31 +233,36 @@ main section:nth-child(1) button img {
    height: auto;
 }
 
-/* Mijn Constant Bewegende Hoofd */
 
 @keyframes enthousiastme {
    0% {
+     -webkit-transform: translate(0);
              transform: translate(0);
    }
    20% {
-             transform: translate(-0.4rem, 0.4rem);
+     -webkit-transform: translate(-2px, 2px);
+             transform: translate(-2px, 2px);
    }
    40% {
-             transform: translate(-0.4rem, -0.4rem);
+     -webkit-transform: translate(-2px, -2px);
+             transform: translate(-2px, -2px);
    }
    60% {
-             transform: translate(0.4rem, 0.4rem);
+     -webkit-transform: translate(2px, 2px);
+             transform: translate(2px, 2px);
    }
    80% {
-             transform: translate(0.4rem, -0.4rem);
+     -webkit-transform: translate(2px, -2px);
+             transform: translate(2px, -2px);
    }
    100% {
+     -webkit-transform: translate(0);
              transform: translate(0);
    }
  }
 
-
- /* 9 Verschillende Manieren Van "Hallo" */
+ 
+ 
 
  main section:nth-child(1) > ul {
    padding: 0 1.6rem;
@@ -278,26 +277,32 @@ main section:nth-child(1) button img {
    height: 100%;
 }
 
+
 main section:nth-child(1) ul li:nth-child(even) {
    justify-self: end;
 }
 
 main section:nth-child(1) ul li p {
-   font-family: var(--secondary-font);
+   font-family: var(--bc-secondary-font);
 
-   font-size: var(--greetings-font-size);
+   font-size: var(--bc-greetings-font-size);
 
-   color: var(--primary-font-color);
+   color: var(--bc-primary-font-color);
 }
 
 
-/* Achterkant Kaart */
+
+
+
+
+
+
+
 
 main section:nth-child(2) {
    position: absolute;
 
-   top: 0;  
-   left: 0;
+   top: 0;  left: 0;
 
    display: flex;
 
@@ -326,13 +331,12 @@ main section:nth-child(2).kaart_draaien_2 {
 }
 
 
-/* Navigatie */
-
 main section:nth-child(2) nav {
    width: 90%;
    height: 6rem;
 }
 
+/* TO DO AFSTAND TUSSEN NAVIGATIE EN SLEUREN FIXEN. */
 main section:nth-child(2) nav ul {
    position: relative;
 
@@ -347,32 +351,88 @@ main section:nth-child(2) nav ul {
    height: 100%;
 }
 
-main section:nth-child(2) nav ul li:nth-child(1) h2 {
-   font-family: var(--primary-font);
-   font-size: 1.8rem;
-
-   color: var(--primary-font-color);
-}
-
 main section:nth-child(2) nav ul li:nth-child(2) {
    position: absolute;
 
    right: 0;
 }
 
+
+main section:nth-child(2) nav ul li:nth-child(1) h1 {
+   font-family: var(--bc-primary-font);
+   font-size: 2rem;
+
+   color: var(--bc-primary-font-color);
+}
+
+
+
+/* TO DO AFBEELDING IN BUTTON FIXEN, GROOTTE EN IN PHOTOSHOP CORRIGEREN. */
 main section:nth-child(2) nav ul li:nth-child(2) button {
-   font-family: var(--primary-font);
-   font-size: 1.6rem;
+   font-family: var(--bc-primary-font);
+   font-size: 2rem;
    font-weight: 500;
 
-   color: var(--primary-font-color);
+   color: var(--bc-primary-font-color);
 
    border: none;
    background: none;
 }
 
-/* Algemene Styling Ul's Achterkant */
-main section:nth-child(2) ul {
+
+main section:nth-child(2) article {
+   padding-left: 3rem;
+
+   display: flex;
+
+   align-items: center;
+
+   gap: 2rem;
+
+   width: 90%;
+   height: 10rem;
+
+   border-radius: 1rem;
+
+   background-color: var(--bc-secondary-accent-color);
+}
+
+main section:nth-child(2) article figure {
+   overflow: hidden;
+
+   width: 6rem;
+   height: 6rem;
+
+   border-radius: 50%;
+
+   background-color: var(--bc-bg-color);
+}
+
+main section:nth-child(2) article figure img {
+   width: 100%;
+
+   object-fit: contain;
+}
+
+
+main section:nth-child(2) article figcaption h2 {
+   padding-bottom: 0.5rem;
+
+   font-family: var(--bc-primary-font);
+   font-size: 2rem;
+   font-weight: 500;
+
+   color: var(--bc-secondary-font-color);
+}
+
+main section:nth-child(2) article figcaption p {
+   font-family: var(--bc-primary-font);
+   font-size: 1.4rem;
+
+   color: var(--bc-secondary-font-color);
+}
+
+main section:nth-child(2) > ul {
    display: flex;
    flex-direction: column;
 
@@ -380,163 +440,77 @@ main section:nth-child(2) ul {
 
    width: 90%;
    height: auto;
+
+   border-radius: 1rem;
+
+   background-color: var(--bc-secondary-accent-color);
 }
 
 main section:nth-child(2) > ul li {
-   width: 100%;
-   height: 6rem;
-}
+   padding-left: 5rem;
 
-main section:nth-child(2) > ul li a {
-   padding-left: 2rem;
-
-   display: flex;
-   
-   align-items: center;
-   
-   width: 100%;
-   height: 100%;
-}
-
-main section:nth-child(2) > ul li a h2 {
    position: relative;
 
-   padding: 0 4rem;
-
-   font-family: var(--primary-font);
-   font-size: 1.8rem;
-
-   width: 100%;
-
-   color: var(--links-color);
-}
-
-main section:nth-child(2) > ul li a h2::before {
-   --icon-size: 2rem;
-
-   position: absolute;
-
-   top: calc(50% - var(--icon-size) / 2);
-   left: 0;
-
-   content: ' ';
-
-   width: var(--icon-size);
-   height: var(--icon-size);
-}
-
-main section:nth-child(2) ul:nth-child(3) li:nth-child(1) a h2::before {
-   background-image: url('../assets/icons/globe.svg');
-}
-
-main section:nth-child(2) ul:nth-child(4) li:nth-child(1) a h2::before {
-   background-image: url('../assets/icons/discord_icon.svg');
-}
-
-main section:nth-child(2) ul:nth-child(4) li:nth-child(2) a h2::before {
-   background-image: url('../assets/icons/github_icon.svg');
-}
-
-main section:nth-child(2) ul:nth-child(4) li:nth-child(3) a h2::before {
-   background-image: url('../assets/icons/instagram_icon.svg');
-}
-
-main section:nth-child(2) > ul li a h2::after {
-   --arrow-size: 1.5rem;
-
-   position: absolute;
-
-   top: calc(50% - var(--arrow-size) / 2);
-   right: 2rem;
-
-   content: ' ';
-
-   width: var(--arrow-size);
-   height: var(--arrow-size);
-
-   background-image: url('../assets/icons/arrow_right.svg');
-}
-
-main section:nth-child(2) > ul:nth-child(2) li {
-   padding-left: 2rem;
-
    display: flex;
 
    align-items: center;
 
-   gap: 1.5rem;
-
    width: 100%;
-   height: 8rem;
+   height: 6rem;
 
-   border-radius: 1rem;
-
-   background-color: var(--secondary-accent-color);
+   font-family: var(--bc-primary-font);
+   
+   color: var(--bc-secondary-font-color);
 }
 
-main section:nth-child(2) > ul:nth-child(2) li figure {
-   overflow: hidden;
+/* TO DO Iconen aan het begin oplossen. */
+main section:nth-child(2) > ul li::before {
+   position: absolute;
 
-   width: 5rem;
-   height: 5rem;
+   /* Bijbehorend icoon toevoegen. */
+   content: '';
 
-   border-radius: 50%;
+   top: calc(50% - 2rem / 2);
+   left: 2rem;
+
+   width: 2rem;
+   height: 2rem;
 }
 
-main section:nth-child(2) > ul:nth-child(2) li img {
-   width: 100%;
+main section:nth-child(2) article + ul li:nth-child(1)::before {
+   background-image:url('../assets/icons/globe.svg');
 
-   object-fit: contain;
-}
-
-main section:nth-child(2) > ul:nth-child(2) li figcaption h2 {
-
-   font-family: var(--primary-font);
-   font-size: 1.8rem;
-   font-weight: 500;
-
-   color: var(--secondary-font-color);
-}
-
-main section:nth-child(2) > ul:nth-child(2) li figcaption p {
-   font-family: var(--primary-font);
-   font-size: 1.4rem;
-
-   color: var(--secondary-font-color);
-}
-
-
-main section:nth-child(2) ul:nth-child(3) {
-   border-radius: 1rem;
-   background-color: var(--secondary-accent-color);
-}
-
-
-main section:nth-child(2) ul:nth-child(4) {
-   border-radius: 1rem;
-   background-color: var(--secondary-accent-color);
-}
-
-main section:nth-child(2) ul:nth-child(4) li:not(:last-of-type) {
-   border-bottom: 0.1rem solid var(--links-border-color);
+   background-position: center;
+   background-repeat: no-repeat;
 }
 
 
 
+main section:nth-child(2) > ul li::after {
+   position: absolute;
+
+   content: '';
+
+   top: calc(50% - 1.5 / 2);
+   right: 2rem;
+
+   width: 1.5rem;
+   height: 1.5rem;
+
+   background-image:url('../assets/icons/arrow_right.svg');
+   background-position: center;
+   background-repeat: no-repeat;
+
+}
+
+main section:nth-child(2) > ul li p {
+   font-size: 1.5rem;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+main section:nth-child(2) > ul li:not(:last-of-type) {
+   border-bottom: 0.1rem solid var(--bc-secondary-border-color);
+}
 
 
 
@@ -544,8 +518,8 @@ main section:nth-child(2) ul:nth-child(4) li:not(:last-of-type) {
 @media only screen and (min-width: 450px) {
 
       :root {
-         --nav-font-size: 1.4rem;
-         --greetings-font-size: 4.5rem;
+         --bc-nav-font-size: 1.4rem;
+         --bc-greetings-font-size: 4.5rem;
       }
 
       main {
@@ -568,6 +542,10 @@ main section:nth-child(2) ul:nth-child(4) li:not(:last-of-type) {
       height: 100%;
    }
 
+
+   main section:nth-child(1) {
+      border: 0.6rem solid #E9BBFC;
+   }
 
    main section:nth-child(1), main section:nth-child(2) {
       border-radius: 0.5rem;
