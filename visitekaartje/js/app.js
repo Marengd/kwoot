@@ -52,7 +52,7 @@ function aftellen() {
 
   // Als er na 5 seconde niet op mijn hoofd is gedrukt.
   function raakt_geïrriteerd() {
-    hoofd.src = "../assets/images/mijn_geweldige_boze_hoofd.png";
+    hoofd.src = "/assets/images/mijn_geweldige_boze_hoofd.png";
   }
 }
 document.addEventListener("DOMContentLoaded", aftellen);
@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", aftellen);
 // Zodra de gebruiker op mijn hoofd drukt, om mijn contactgegevens te bekijken.
 function enorm_blij() {
   clearTimeout(timer);
-  this.src = "../assets/images/mijn_geweldige_blije_hoofd.png";
+  this.src = "/assets/images/mijn_geweldige_blije_hoofd.png";
 }
 hoofd.addEventListener("mouseover", enorm_blij);
 
 // Zodra de gebruiker mijn contactgegevens heeft bekeken.
 function weer_blij() {
-  this.src = "../assets/images/mijn_geweldige_hoofd.png";
+  this.src = "/assets/images/mijn_geweldige_hoofd.png";
 }
 hoofd.addEventListener("mouseout", weer_blij);
 
