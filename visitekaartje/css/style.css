@@ -132,6 +132,9 @@ meter {
 /********/
 /* Body */
 /********/
+html {
+   overflow: hidden;
+}
 
 html, body {
    height: 100%;
