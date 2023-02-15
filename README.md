@@ -4,7 +4,7 @@
 
 <img src="/docs/assets/images/main.jpg" alt="Een afbeelding gesplitst in twee delen, met aan de linkerkant een afbeelding van Kanye West in het kostuum voor het muziek project Donda. Aan de rechterkant van de afbeelding is een mobiele telefoon te zien met het symbool van wijsheid. ">
 
-# In Development ..
+# In development ..
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
