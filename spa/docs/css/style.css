@@ -96,9 +96,54 @@ meter {
 /*********************/
 
 :root {
-   --maintenance-bg-color: red;
+   --primary-font: 'SuisseIntl';
+
+   --primary-text-color: white;
+
+   --initials-font-size: 8rem;
+
+   --h2-font-size: 4rem;
+   --h2-bottom-spacing: 2.4rem;
+
+   --header-description-font-size: 1.8rem;
+
+   --body-font-size: 1.6rem;
+
+   --secondary-button-padding: 2.4rem 4rem;
+   --secondary-button-border-radius: 80rem;
+   --secondary-button-text-color: white;
+   --secondary-button-bg-color: rgba(0, 0, 0, 0.5);
+
+   --primary-button-padding: 2.4rem 4rem;
+   --primary-button-border-radius: 80rem;
+   --primary-button-bg-color: white;
+
+   --nav-buttons-font-size: 1.6rem;
+   --nav-buttons-bg-color: rgba(237, 237, 237, 0.255);
+
+   --whitespace-sides: 2.4rem;
+
+   --generator-bg-color: black;
+
+   --white: white;
+   --black: black;
 }
 
+
+
+
+
+/* ***** */
+/* Fonts */
+/* ***** */
+
+@font-face {
+   font-family: 'SuisseIntl';
+
+   src: url('../assets/fonts/SuisseIntl-Regular.woff2') format('woff2');
+
+   font-style: bold;
+ }
 
 
 
@@ -116,5 +161,268 @@ html, body {
 }
 
 body {
-   background-color: var(--maintenance-bg-color);
+   font-family: var(--primary-font);
+   background-color: var(--black);
+}
+
+
+/* ****** */
+/* Header */
+/* ****** */
+
+header {
+   position: relative;
+
+   display: flex;
+   flex-direction: column;
+
+   justify-content: space-between;
+
+   width: 100%;
+   height: 100%;   
+}
+
+header section {
+   z-index: 90;
+
+   padding: var(--whitespace-sides);
+
+   width: 100%;
+   height: auto;
+}
+
+
+/* Fixed initials */
+
+header section:nth-child(1) {
+   z-index: 95;
+
+   position: fixed;
+}
+
+header section:nth-child(1) ul {
+   display: flex;
+
+   align-items: center;
+   justify-content: space-between;
+  
+   width: 100%;
+   height: auto;
+}
+
+header section:nth-child(1) ul li span {
+   font-size: var(--initials-font-size);
+
+   color: var(--primary-text-color);
+}
+
+
+/* Hero header text */
+
+header section:nth-child(2) article {
+   padding-top: 16rem;
+
+   width: 100%;
+   height: auto;
+}
+
+header section:nth-child(2) article h2 {
+   padding-bottom: var(--h2-bottom-spacing);
+
+   display: grid;
+
+   font-size: var(--h2-font-size);
+
+   color: var(--primary-text-color);
+}
+
+header section:nth-child(2) article h2 span:nth-child(1) {
+   text-align: right; /* Align his name to the right. */
+}
+
+header section:nth-child(2) article p {
+   font-size: var(--header-description-font-size);
+
+   color: var(--primary-text-color);
+
+   max-width: 32rem;
+}
+
+
+/* Header 2 cta's */
+
+header nav {
+   z-index: 95;
+
+   padding: var(--whitespace-sides);
+
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+
+   width: 100%;
+   height: auto;
+}
+
+header nav ul {
+   display: flex;
+
+   align-items: center;
+   justify-content: space-between;
+
+   width: 100%;
+   height: 100%;
+
+   border-radius: 80rem;
+
+   background-color: var(--nav-buttons-bg-color);
+   backdrop-filter: blur(8rem); -webkit-backdrop-filter: blur(8rem);
+}
+
+header nav ul li {
+   grid-column: span 2;
+
+   font-size: var(--nav-buttons-font-size);
+}
+
+header nav ul li a {
+   padding: var(--secondary-button-padding);
+
+   display: block;
+
+   border-radius: var(--secondary-button-border-radius);
+
+   color: var(--secondary-button-text-color);
+
+   background-color: var(--secondary-button-bg-color);
+   backdrop-filter: blur(8rem); -webkit-backdrop-filter: blur(8rem);
+}
+
+header nav ul li button {
+   padding: var(--primary-button-padding);
+
+   border-radius: var(--primary-button-border-radius);
+
+   background-color: var(--primary-button-bg-color);
+}
+
+header nav ul li button:hover {
+   --primary-button-text-color: white;
+   --primary-button-bg-color: #2e2e2e;
+
+   color: var(--primary-button-text-color);
+   background-color: var(--primary-button-bg-color);
+}
+
+/* Header background image */
+
+header img {
+   position: absolute;
+
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+}
+
+
+/* **************** */
+/* Wisdom Generator */
+/* **************** */
+
+aside {
+   display: none;
+}
+
+aside.visible {
+   font-size: 1.8rem;
+   color: var(--white);
+
+   z-index: 99;
+
+   padding: var(--whitespace-sides);
+
+   position: fixed;
+
+   inset: 0;
+
+   display: flex;
+
+   flex-direction: column;
+
+   align-items: center;
+   justify-content: space-between;
+
+   background-color: var(--generator-bg-color);
+}
+
+aside nav {
+   width: 100%;
+   height: 4rem;
+}
+
+aside nav ul {
+   display: flex;
+
+   align-items: center;
+
+   justify-content: space-between;
+
+   width: 100%;
+}
+
+aside nav ul li button {
+   display: flex;
+   flex-direction: column;
+
+   gap: .4rem;
+
+   align-items: flex-end;
+}
+
+aside section {
+   width: 100%;
+}
+
+aside section:nth-child(3) {
+   display: flex;
+
+   align-items: flex-end;
+   justify-content: space-between;
+   
+   width: 100%;
+   height: auto;
+}
+
+aside section:nth-child(3) button {
+   background-color: red;
+}
+
+
+
+/* **** */
+/* Main */
+/* **** */
+
+main {
+   width: 100%;
+}
+
+main section {
+   width: 100%;
+   height: 100dvh;
+}
+
+
+main section:nth-child(2) figure {
+   width: 100%;
+   height: 100%;
+}
+
+main section:nth-child(2) figure img {
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
 }
