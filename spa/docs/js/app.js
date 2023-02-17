@@ -10,7 +10,7 @@ const CloseGeneratorBtn = $('aside nav ul li button');
 const WisdomGenerator = $('aside');
 
 // Logic
-async function gainWisdom() {
+async function getQuotes() {
   const response = await fetch('https://api.kanye.rest');
   const data = await response.json(); // Convert the JSON data from the response object to a JavaScript object.
   const quote = data.quote;
@@ -28,7 +28,7 @@ OpenGeneratorBtn.addEventListener('click', function() {
  });
  
 GainWisdomBtn.addEventListener('click', function() {
-  gainWisdom();
+  getQuotes();
 });
 
 
@@ -37,7 +37,7 @@ function $ (element) {
    return document.querySelector(element);
 }
 
-gainWisdom();
+getQuotes();
 
 
 
