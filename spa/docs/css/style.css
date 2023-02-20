@@ -398,7 +398,7 @@ aside section:nth-child(3) {
 aside section:nth-child(3) button {
    padding: 2rem 4rem;
 
-   outline: pink;
+   outline: blue;
    
    background-color: red;
 }
