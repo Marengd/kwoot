@@ -1,7 +1,7 @@
 const routerView = document.getElementById("router-view");
 
 function loadPage(page) {  
-   fetch(`./docs/pages/${page}.html`)
+   fetch(`./pages/${page}.html`)
      .then(response => response.text())
      .then(html => routerView.innerHTML = html);
  }
@@ -14,13 +14,17 @@ function onRouteChanged() {
    }
    
       switch (hash) {       
-         case "#about":
-           loadPage("about");
-           break;
+          case "#about":
+          loadPage("about");
+          break;
+
+          case "#generator":
+          loadPage("generator");
+          break;
        
-         default:
-           loadPage("404");
-           break;
+          default:
+          loadPage("404");
+          break;
    }
 }
  

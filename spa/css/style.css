@@ -162,99 +162,144 @@ html, body {
 
 body {
    font-family: var(--primary-font);
+   color: white;
    background-color: var(--black);
 }
 
+h1 {
+   font-size: 2rem;
+}
+
+
+/* **** */
+/* Main */
+/* **** */
+
+main {
+   width: 100%;
+   height: 100%;
+}
 
 /* ****** */
 /* Header */
 /* ****** */
 
 header {
-   position: relative;
+   display: grid;
 
-   display: flex;
-   flex-direction: column;
-
-   justify-content: space-between;
-
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   
    width: 100%;
-   height: 100%;   
+   height: 100%;
+
+   /* background-color: green; */
 }
 
-header section {
-   z-index: 90;
+header > section {
+   width: 100%;
+   height: 100%;
 
+   /* background-color: blue; */
+}
+
+/* ***** */
+/* Links */
+/* ***** */
+
+header > section:nth-child(1) {
+   display: none;
+
+   width: 100%;
+   max-width: 100dvw;
+
+   height: 100%;
+   max-height: 100dvh;
+}
+
+header > section:nth-child(1) figure {
+   width: 100%;
+   height: 100%;
+}
+
+header > section:nth-child(1) figure img {
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+}
+
+
+/* ****** */
+/* Rechts */
+/* ****** */
+
+header > section:nth-child(2) {
    padding: var(--whitespace-sides);
 
+   display: flex;
+
+   flex-direction: column;
+
+   align-items: center;
+   justify-content: space-between;
+
+   /* background-color: red; */
+}
+
+
+header > section:nth-child(2) section {
+
    width: 100%;
-   height: auto;
+
+   /* background-color: blue; */
 }
 
-
-/* Fixed initials */
-
-header section:nth-child(1) {
-   z-index: 95;
-
-   position: fixed;
-}
-
-header section:nth-child(1) ul {
+header > section:nth-child(2) section ul {
    display: flex;
 
    align-items: center;
    justify-content: space-between;
-  
-   width: 100%;
-   height: auto;
-}
-
-header section:nth-child(1) ul li span {
-   font-size: var(--initials-font-size);
-
-   color: var(--primary-text-color);
-}
-
-
-/* Hero header text */
-
-header section:nth-child(2) article {
-   padding-top: 16rem;
 
    width: 100%;
    height: auto;
 }
 
-header section:nth-child(2) article h2 {
-   padding-bottom: var(--h2-bottom-spacing);
+header > section:nth-child(2) section ul li {
+   /* background-color: green; */
+}
 
+header > section:nth-child(2) section ul li span {
+   font-size: 8rem; /* Tijdelijk */
+}
+
+
+header > section:nth-child(2) article {
+   width: 100%;
+   height: auto;
+
+   /* background-color: orange; */
+}
+
+header > section:nth-child(2) article h1 {
    display: grid;
 
-   font-size: var(--h2-font-size);
-
-   color: var(--primary-text-color);
+   font-size: 4rem; /* Tijdelijk */
 }
 
-header section:nth-child(2) article h2 span:nth-child(1) {
-   text-align: right; /* Align his name to the right. */
+header > section:nth-child(2) article h1 span:nth-child(1) {
+   text-align: right;
 }
 
-header section:nth-child(2) article p {
-   font-size: var(--header-description-font-size);
-
-   color: var(--primary-text-color);
+header > section:nth-child(2) article p {
+   font-size: 1.8rem; /* Tijdelijk */
 
    max-width: 32rem;
 }
 
 
-/* Header 2 cta's */
 
-header nav {
+header > section:nth-child(2) nav {
    z-index: 95;
-
-   padding: var(--whitespace-sides);
 
    display: flex;
 
@@ -265,7 +310,7 @@ header nav {
    height: auto;
 }
 
-header nav ul {
+header > section:nth-child(2) nav ul {
    display: flex;
 
    align-items: center;
@@ -280,13 +325,13 @@ header nav ul {
    backdrop-filter: blur(8rem); -webkit-backdrop-filter: blur(8rem);
 }
 
-header nav ul li {
+header > section:nth-child(2) nav ul li {
    grid-column: span 2;
 
    font-size: var(--nav-buttons-font-size);
 }
 
-header nav ul li a {
+header > section:nth-child(2) nav ul li a {
    padding: var(--secondary-button-padding);
 
    display: block;
@@ -296,46 +341,19 @@ header nav ul li a {
    color: var(--secondary-button-text-color);
 
    background-color: var(--secondary-button-bg-color);
+
    backdrop-filter: blur(8rem); -webkit-backdrop-filter: blur(8rem);
 }
 
-header nav ul li button {
-   padding: var(--primary-button-padding);
-
-   border-radius: var(--primary-button-border-radius);
-
-   background-color: var(--primary-button-bg-color);
-}
-
-header nav ul li button:hover {
-   --primary-button-text-color: white;
-   --primary-button-bg-color: #2e2e2e;
-
-   color: var(--primary-button-text-color);
-   background-color: var(--primary-button-bg-color);
-}
-
-/* Header background image */
-
-header img {
-   position: absolute;
-
-   width: 100%;
-   height: 100%;
-
-   object-fit: cover;
-}
 
 
-/* **************** */
-/* Wisdom Generator */
-/* **************** */
+
+
+
+
+
 
 aside {
-   display: none;
-}
-
-aside.visible {
    font-size: 1.8rem;
    color: var(--white);
 
@@ -405,16 +423,14 @@ aside section:nth-child(3) button {
 
 
 
-/* **** */
-/* Main */
-/* **** */
 
-main {
+@media (min-width: 576px) {
+
+   header section:nth-child(1) {
+   display: block;  
+     
    width: 100%;
    height: auto;
-}
+ }
 
-main h1 {
-   color: var(--primary-text-color);
-   font-size: 5rem;
 }
