@@ -1,14 +1,17 @@
-/***
-    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
+
+
+
+
+/* ********************************************************** */
+/* The new CSS reset - version 1.8.4 (last updated 14.2.2023) */
+/* GitHub page: https://github.com/elad2412/the-new-css-reset */
+/* ********************************************************** */
 
 /*
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
-
- *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
    all: unset;
    display: revert;
 }
@@ -32,7 +35,8 @@ ol, ul, menu {
 
 /* For images to not be able to exceed their container */
 img {
-   max-width: 100%;
+   max-inline-size: 100%;
+   max-block-size: 100%;
 }
 
 /* removes spacing between cells in tables */
@@ -56,9 +60,19 @@ meter {
    appearance: revert;
 }
 
+/* preformatted text - use only for this feature */
+:where(pre) {
+   all: revert;
+}
+
 /* reset default text opacity of input placeholder */
 ::placeholder {
    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+   content: initial;
 }
 
 /* fix the feature of 'hidden' attribute.
@@ -83,6 +97,10 @@ meter {
    -webkit-user-drag: element;
 }
 
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+   all: revert;
+}
 
 
 
@@ -96,7 +114,7 @@ meter {
 /*********************/
 
 :root {
-   --primary-font: 'SuisseIntl';
+
 
    --primary-text-color: white;
 
@@ -130,6 +148,23 @@ meter {
 }
 
 
+:root {
+   --mobile-grid: repeat(4, 1fr);
+
+
+   --primary-font: 'SuisseIntl';
+   --secondary-font: 'Suisse Works';
+
+   --secondary-font-letter-spacing: .16rem;
+
+   --font-size-XS: .8rem;
+   --font-size-S: 1.6rem;
+   --font-size-M: 2.4rem;
+   --font-size-L: 3.2rem;
+   --font-size-XL: 4rem;
+}
+
+
 
 
 
@@ -142,7 +177,15 @@ meter {
 
    src: url('../assets/fonts/SuisseIntl-Regular.woff2') format('woff2');
 
-   font-style: bold;
+   font-style: normal;
+ }
+
+ @font-face {
+   font-family: 'Suisse Works';
+
+   src: url('../assets/fonts/SuisseWorks-Regular.woff2') format('woff2');
+
+   font-style: normal
  }
 
 
@@ -349,77 +392,206 @@ header > section:nth-child(2) nav ul li a {
 
 
 
+/* *************** */
+/* Quote Generator */
+/* *************** */
 
 
+/* ************** */
+/* Generator Main */
+/* ************** */
+
+main.generator {
+   width: 100%;
+   height: 100%;
+
+   --generator-main-bg: black;
+   background-color: var(--generator-main-bg);
+}
+
+/*  */
+
+main.generator div.loader {
+   display: none;
+}
+
+/*  */
+
+main.generator div.error {
+   display: none;
+}
 
 
-aside {
-   font-size: 1.8rem;
-   color: var(--white);
+/* **************** */
+/* Generator Header */
+/* **************** */
 
-   z-index: 99;
-
-   padding: var(--whitespace-sides);
-
+main.generator header {
    position: fixed;
 
-   inset: 0;
+   width: 100%;
+   height: auto;
+}
 
-   display: flex;
+main.generator header nav {
+   width: 100%;
+   height: auto;
+}
 
-   flex-direction: column;
+main.generator header nav ul {
+   display: grid;
+
+   grid-template-columns: repeat(4, 1fr);
+   column-gap: 1rem;
+
+   width: 100%;
+   height: auto;
+}
+
+main.generator header nav ul li {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-M);
+
+   text-transform:capitalize;
+}
+
+main.generator header nav ul li:last-child {
+   grid-column-end: 5;
+}
+
+main.generator header nav ul li a {
+   display: grid;
+
+   text-align: right;
+}
+
+
+/* ***** */
+/* Quote */
+/* ***** */
+
+main.generator section {
+   display: grid;
 
    align-items: center;
-   justify-content: space-between;
-
-   background-color: var(--generator-bg-color);
-}
-
-aside nav {
-   width: 100%;
-   height: 4rem;
-}
-
-aside nav ul {
-   display: flex;
-
-   align-items: center;
-
-   justify-content: space-between;
 
    width: 100%;
+   height: 100%;
 }
 
-aside nav ul li button {
-   display: flex;
-   flex-direction: column;
+main.generator section blockquote {
+   --quote-font-size: 3.2rem;
 
-   gap: .4rem;
+   --fading-text-mask: linear-gradient(to bottom, red 50%, transparent 100%);
 
-   align-items: flex-end;
+   font-family: var(--secondary-font);
+   font-size: var(--quote-font-size);
+
+   letter-spacing: var(--secondary-font-letter-spacing);
+
+   -webkit-mask-image: var(--fading-text-mask);
+   mask-image: var(--fading-text-mask);
 }
 
-aside section {
+main.generator section blockquote #caret {   
+   animation: blink 1.25s infinite;
+}
+
+@keyframes blink {
+
+   0% { 
+      opacity: 1; 
+   }
+
+   50% { 
+      opacity: 0; 
+   }
+
+   100% { 
+      opacity: 1; 
+   }
+
+ }
+
+main.generator section blockquote #caret img {
+   width: 1.5vmin;
+   height: auto;
+}
+
+
+ 
+
+
+
+/* ****** */
+/* Footer */
+/* ****** */
+
+main.generator footer {
+   position: fixed;
+
+   bottom: 0;
+
    width: 100%;
+   height: auto;
 }
 
-aside section:nth-child(3) {
-   display: flex;
+main.generator footer ul {
+   display: grid;
 
-   align-items: flex-end;
-   justify-content: space-between;
+   grid-template-columns: var(--mobile-grid);
+
+   align-items: end;
    
    width: 100%;
    height: auto;
 }
 
-aside section:nth-child(3) button {
-   padding: 2rem 4rem;
+/* **** */
+/* Hint */
+/* **** */
 
-   border: 0.5rem solid blue;
-   
-   background-color: red;
+main.generator footer ul li:first-child {
+   grid-column: span 2;
+
+   font-family: var(--primary-font);
+   font-size: var(--font-size-S);
 }
+
+/* ****** */
+/* Button */
+/* ****** */
+
+main.generator footer ul li:last-child {
+   grid-column: span 2;
+   grid-column-end: 5;
+
+   display: flex;
+
+   justify-content: flex-end;
+}
+
+main.generator footer ul li:last-child button {
+   cursor: pointer;
+
+   width: 30vmin;
+   aspect-ratio: 1;
+}
+
+main.generator footer ul li:last-child button div {
+   pointer-events: none;
+}
+
+main.generator footer ul li:last-child button div svg {
+   pointer-events: none;
+
+   width: 100%;
+   height: 100%;
+
+   fill: white;
+}
+
+
 
 
 
