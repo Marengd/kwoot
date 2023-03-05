@@ -34,12 +34,6 @@
 
 
 
-
-
-
-
-
-
 // const routerView = document.getElementById("router-view");
 
 // function loadPage(page) {
@@ -74,13 +68,6 @@
 // }
 
 // window.addEventListener("hashchange", onRouteChanged);
-
-
-
-
-
-
-
 
 
 

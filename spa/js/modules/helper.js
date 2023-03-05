@@ -1,9 +1,4 @@
-
-
-
-
 // Helper Function
-
-function $ (element) { 
+export function $ (element) { 
     return document.querySelector(element);
   }
