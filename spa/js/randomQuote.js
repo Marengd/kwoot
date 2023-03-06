@@ -3,6 +3,10 @@ import { $ } from "./modules/helper.js";
 import { fetchQuotes, quotePromises } from "./modules/fetchQuotes.js";
 import { showError } from "./modules/states.js";
 
+// VARS
+
+// LOGIC
+
 // Function to get a random quote
 async function getQuotes(quoteTextfield, quoteButton) {
   // Check if there are any quotes left to fetch, and fetch them if necessary
@@ -10,11 +14,11 @@ async function getQuotes(quoteTextfield, quoteButton) {
     quotePromises.push(...await fetchQuotes());
   }
 
-   // Select a random quote promise from the array
-   const quoteIndex = Math.floor(Math.random() * quotePromises.length);
-   const quotePromise = quotePromises.splice(quoteIndex, 1)[0];
+  // Select a random quote promise from the array
+  const quoteIndex = Math.floor(Math.random() * quotePromises.length);
+  const quotePromise = quotePromises.splice(quoteIndex, 1)[0];
 
-   try {
+  try {
     // Await the resolution of the quote promise
     const quote = await quotePromise;
 
@@ -43,12 +47,15 @@ async function getQuotes(quoteTextfield, quoteButton) {
       quoteTextfield.innerHTML = '';
       type();
     }
+
   } catch (error) {
     // If there is an error, log it to the console and show the error message
     console.log(error);
     showError();
   }
 }
+
+// Event Listeners
 
 // Event listener for the quote button and error message close button
 document.addEventListener('click', function(event) {
@@ -59,7 +66,7 @@ document.addEventListener('click', function(event) {
   // If the click target is the quote button, get a new quote
   if (event.target === quoteButton) {
     getQuotes(quoteTextfield, quoteButton);
-  } 
+  }
   // If the click target is the error message close button, hide the error message
   else if (event.target.closest('#error a')) {
     const errorDiv = $('#error');
