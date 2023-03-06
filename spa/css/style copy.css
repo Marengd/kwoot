@@ -563,8 +563,8 @@ main.generator section blockquote {
 
    letter-spacing: var(--secondary-font-letter-spacing);
 
-   /* -webkit-mask-image: var(--fading-text-mask);
-   mask-image: var(--fading-text-mask); */
+   -webkit-mask-image: var(--fading-text-mask);
+   mask-image: var(--fading-text-mask);
 }
 
 main.generator section blockquote #caret {   
