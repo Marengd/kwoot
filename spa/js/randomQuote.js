@@ -70,6 +70,6 @@ document.addEventListener('click', function(event) {
   // If the click target is the error message close button, hide the error message
   else if (event.target.closest('#error a')) {
     const errorDiv = $('#error');
-    errorDiv.classList.remove('active');
+    errorDiv.classList.remove('active'); // WEGHALEN.
   }
 });

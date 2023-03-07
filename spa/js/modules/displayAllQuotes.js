@@ -1,8 +1,12 @@
 import { $ } from "./helper.js";
 import { quotePromises } from './fetchQuotes.js';
+import { loading } from './states.js';
+
+
+loading();
 
 // Call the displayQuotes function when the window is loaded
-window.addEventListener('load', displayQuotes);
+displayQuotes();
 
 
 // VARS
@@ -11,6 +15,9 @@ let currentDetails = null;
 
 // LOGIC
 async function displayQuotes() {
+
+  // Get the loader element
+  const loader = $('#loader');
   // Get the quote list element
   const quoteList = $('#quote-list');
 
@@ -31,6 +38,8 @@ async function displayQuotes() {
 
 
   // To do: Add quotes to local storage.
+
+  loader.classList.add('active');
 
   // Sort the unique quotes alphabetically and loop through them
   Array.from(quotesSet).sort().forEach((quote) => {
@@ -73,6 +82,8 @@ async function displayQuotes() {
   if (currentDetails !== null) {
     quoteList.appendChild(currentDetails);
   }
+
+  loader.classList.remove('active');
 }
 
 

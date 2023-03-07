@@ -143,6 +143,7 @@ meter {
 
 
    --primary-text-color: white;
+   --secondar-text-color: #959595;
 
    --initials-font-size: 8rem;
 
@@ -263,6 +264,25 @@ body div#loader.active {
    background-color: var(--loader-bg);
 }
 
+body div#loader.active svg {
+   fill: white;
+
+   width: 16vmin;
+   aspect-ratio: 1;
+
+   animation: rotating 4s linear infinite;
+}
+
+@keyframes rotating {
+   0% {
+      transform: rotate(0);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
 /* Error */
 
 body div#error {
@@ -331,14 +351,14 @@ h1 {
 /* ****** */
 
 header {
-   display: grid;
+   /* display: grid; */
 
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
    
    width: 100%;
    height: 100%;
 
-   /* background-color: green; */
+   background-color: green;
 }
 
 header > section {
@@ -390,6 +410,9 @@ header > section:nth-child(2) {
    justify-content: space-between;
 
    /* background-color: red; */
+
+   /* background-image: url('../assets/images/header_2.jpg'); */
+   background-position: center;
 }
 
 
@@ -460,15 +483,12 @@ header > section:nth-child(2) nav ul {
    display: flex;
 
    align-items: center;
-   justify-content: space-between;
+   justify-content: center;
 
    width: 100%;
    height: 100%;
 
    border-radius: 80rem;
-
-   background-color: var(--nav-buttons-bg-color);
-   backdrop-filter: blur(8rem); -webkit-backdrop-filter: blur(8rem);
 }
 
 header > section:nth-child(2) nav ul li {
@@ -484,11 +504,13 @@ header > section:nth-child(2) nav ul li a {
 
    border-radius: var(--secondary-button-border-radius);
 
-   color: var(--secondary-button-text-color);
+   color: var(--primary-button-text-color);
 
-   background-color: var(--secondary-button-bg-color);
+   text-transform: capitalize;
 
-   backdrop-filter: blur(8rem); -webkit-backdrop-filter: blur(8rem);
+   background-color: var(--primary-button-bg-color);
+
+   backdrop-filter: blur(8rem); -webkit-backdrop-filter: blur(2rem);
 }
 
 
@@ -503,40 +525,38 @@ main {
 }
 
 
-
+/* **** */
+/* Main */
+/* **** */
 
 main.index main {
-   display: grid;
-
-   grid-template: repeat(auto-fill 12, 1fr);
-
    width: 100%;
-
-   background-color: blue;
 }
 
 
-main.index main section {
+main.index main > section {
    width: 100%;
    height: auto;
 
-   background-color: #212121;
+   /* background-color: green; */
 }
+
+
+/* ****************** */
+/* Section quote list */
+/* ****************** */
 
 main.index main section details {
    font-size: 1.6rem;
 
    width: 100%;
 
-
    border-bottom: 1px solid white;
 }
 
-
-details summary::-webkit-details-marker {
-   display:none;
- }
- 
+main.index main section details[open] {
+   padding-bottom: 4rem;
+}
 
 main.index main section details ul {
    display: flex;
@@ -545,15 +565,115 @@ main.index main section details ul {
    gap: .8rem;
 }
 
-main.index main section details[open] {
-   padding-bottom: 4rem;
-}
-
 main.index main section details summary {
-   padding-bottom: 2rem;
+   position: relative;
+
+   padding: 2rem 0;
+
+   display: flex;
+
+   align-items: center;
 
    font-size: 4rem;
 }
+
+details summary::-webkit-details-marker {
+   display:none;
+ }
+
+main.index main section details summary::after {
+   content: 'Closed';
+   
+   position: absolute;
+
+   right: 1rem;
+
+   font-size: 2rem;
+}
+
+main.index main section details[open] summary::after {
+   content: 'Open';
+}
+
+
+
+
+
+
+
+
+main.index main > section article:nth-child(1) {
+   padding-bottom: 8rem;
+
+   width: 100%;
+   height: auto;
+}
+
+
+main.index main > section article:nth-child(1) h2 {
+   padding-bottom: 2rem;
+
+   font-family: var(--primary-font);
+   font-size: var(--font-size-L);
+}
+
+main.index main > section figure {
+   width: 100%;
+   height: 60rem;
+
+   background-color: #cccccc;
+}
+
+main.index main > section figure img {
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+   object-position: 50% 50%;
+}
+
+
+main.index main > section article:nth-child(2) {
+   padding-bottom: 2rem;
+
+   width: 100%;
+   height: auto;
+}
+
+main.index main > section article:nth-child(2) h2 {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-L);
+
+   text-transform: capitalize;
+}
+
+main.index main > section article:nth-child(2) h2 span {
+   font-family: var(--secondary-font);
+}
+
+main.index main > section article:nth-child(2) p {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-S);
+
+   color: var(--secondar-text-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -609,7 +729,7 @@ main.generator header nav ul li {
    font-family: var(--primary-font);
    font-size: var(--font-size-M);
 
-   text-transform:capitalize;
+   text-transform: capitalize;
 }
 
 main.generator header nav ul li:last-child {
@@ -781,4 +901,44 @@ main.generator footer ul li:last-child button div svg.active {
    height: auto;
  }
 
+}
+
+@media only screen and (min-width: 1360px)  {
+
+
+   main.index main {
+      display: grid;
+   
+      grid-template-columns: repeat(12, 1fr);
+   
+      width: 100%;
+   }
+   
+   
+   main.index main > section {   
+      width: 100%;
+      height: auto;
+
+      grid-column: span 12;
+   
+      /* background-color: green; */
+   }
+
+
+   main.index main > section article:nth-child(1) {
+   }
+
+   main.index main > section figure {
+
+   }
+
+   main.index main > section article:nth-child(2) {
+
+      /* background-color: red; */
+   }
+
+   main.index main > section > section {
+      
+      /* background-color: blue; */
+   }
 }
