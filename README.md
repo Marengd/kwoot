@@ -53,4 +53,4 @@ Follow Danian Marengo, <a href="https://www.danianmarengo.nl">Website</a>
 ## License
 <a href="https://github.com/Marengd/kwoot/blob/main/LICENSE"> Mit</a>
 <br>
-Developed with wisdom, Danian Marengo
+Made by Danian Marengo
