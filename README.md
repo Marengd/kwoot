@@ -1,7 +1,7 @@
 # Kanye West, Word of Wisdom Generator
 Unleash Kanye's Wisdom, let his wisdom guide us.
 
-<img src="/docs/assets/images/header.jpg" alt="Close – up van een mobiele telefoon omringd door duisternis met de tekst Kanye West, Word of Wisdom Generator op het scherm." width="100">
+<img src="/docs/assets/images/header_definitive.jpg" alt="Close – up van een mobiele telefoon omringd door duisternis met de tekst Kanye West, Word of Wisdom Generator op het scherm." width="100%">
 
 <br>
 
@@ -43,7 +43,7 @@ $ Index.html
 
 <br>
 
-## Diversen
+## Miscellaneous
 Follow Danian Marengo, <a href="https://www.danianmarengo.nl">Website</a>
 
 <br>
