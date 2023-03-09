@@ -607,12 +607,13 @@ body div#error.active article a {
    color: var(--white);
 
    border-radius: 100%;
-   border: .1rem solid white;
+   border: .1rem solid var(--white);
 
    /* background-color: var(--secondary-button-bg-color); */
 }
 
 .home header > section:nth-child(2) nav ul li a:hover {
+   color: var(--black);
    background-color: var(--secondary-button-bg-color);
 }
 

@@ -1,8 +1,13 @@
 import { $ } from "./helper.js";
 
+const loader = $('#loader');
+
 export function loading() {
-  const loader = $('#loader');
   loader.classList.add('active');
+}
+
+export function loaded() {
+  loader.classList.remove('active');
 }
 
 // Error state

@@ -1,6 +1,6 @@
 import { $ } from "./helper.js";
 import { quotePromises } from './fetchQuotes.js';
-import { loading } from './states.js';
+import { loading, loaded } from './states.js';
 
 
 loading();
@@ -83,7 +83,7 @@ async function displayQuotes() {
     quoteList.appendChild(currentDetails);
   }
 
-  loader.classList.remove('active');
+  loaded();
 }
 
 
