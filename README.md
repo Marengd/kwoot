@@ -1,31 +1,54 @@
 # Kanye West, Word of Wisdom Generator
+Unleash Kanye's Wisdom, let his wisdom guide us.
 
-<img src="/docs/assets/images/header.jpg" alt="Close – up van een mobiele telefoon omringd door duisternis met de tekst Kanye West, Word of Wisdom Generator op het scherm.">
+<img src="/docs/assets/images/header.jpg" alt="Close – up van een mobiele telefoon omringd door duisternis met de tekst Kanye West, Word of Wisdom Generator op het scherm." width="100">
 
-<!-- <img src="/docs/assets/images/main.jpg" alt="Een afbeelding gesplitst in twee delen, met aan de linkerkant een afbeelding van Kanye West in het kostuum voor het muziek project Donda. Aan de rechterkant van de afbeelding is een mobiele telefoon te zien met het symbool van wijsheid. "> -->
+<br>
 
-<!-- # In development .. -->
+## Overview
+Welcome to my Github project for the project Web App From Scratch <a href="https://github.com/cmda-minor-web/css-to-the-rescue-2223">CSS To the Rescue</a>, which is part of the <a href="https://github.com/cmda-minor-web">Minor Web design and Development</a> at the <a href="https://www.hva.nl/">Hogeschool van Amsterdam</a>, as part of the program <a href="https://www.hva.nl/opleidingen/communication-and-multimedia-design?gclid=Cj0KCQiAgaGgBhC8ARIsAAAyLfFCp5OTcBLGcx-_uMWa2sowONOebB19jLA1KMt2yEmVFGWaHdsi9DwaAq0PEALw_wcB">Communication and Multimedia design.</a>
+
+<br>
+
+## Getting started
+Click on the green button labeled "Code" in the upper right corner of the page.
+```
+$ <> Code
+```
+
+Select "Download Zip" to download the repository as a zip file.
+```
+$ Download ZIP
+```
+
+Open the downloaded zip folder, then extract the contents to a location on your computer.
+
+```
+$ Word_Of_Wisdom_Generator.Zip
+```
+
+Open the extracted file and navigate to the file named "index.html", open it in your favorite web browser to view the website.
+
+```
+$ Index.html
+```
+
+<br>
 
 
+## Credits
+<ul>
+  <li>https://kanye.rest/</li>
+</ul>
 
+<br>
 
+## Diversen
+Follow Danian Marengo, <a href="https://www.danianmarengo.nl">Website</a>
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+<br>
 
-<!-- ☝️ replace this description with a description of your own work -->
-
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
-
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+## License
+<a href="https://github.com/Marengd/kwoot/blob/main/LICENSE"> Mit, Massachusetts Institute of Technology.</a>
+<br>
+Developed with ✶, Danian Marengo
