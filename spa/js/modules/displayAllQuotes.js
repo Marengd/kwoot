@@ -1,11 +1,13 @@
+// Import necessary modules
 import { $ } from "./helper.js";
 import { quotePromises } from './fetchQuotes.js';
 import { loading, loaded } from './states.js';
 
 
+// Call the loading state function immediately
 loading();
 
-// Call the displayQuotes function when the window is loaded
+// Call the displayQuotes function immediately
 displayQuotes();
 
 
@@ -23,7 +25,7 @@ async function displayQuotes() {
 
   // Handle error if the element is not found
   if (!quoteList) {
-    console.log("Error: Could not find the ul");
+    console.log("Error: Could not find the 'quote list'");
     return;
   }
 
@@ -33,15 +35,14 @@ async function displayQuotes() {
   // Create a set with unique quotes
   const quotesSet = new Set(quotes);
 
-  // Clear the existing list of quotes
-  quoteList.innerHTML = '';
 
-
-  // To do: Add quotes to local storage.
+  // TO DO: Add quotes to local storage.
 
   loader.classList.add('active');
 
   // Sort the unique quotes alphabetically and loop through them
+  // NOTE: I'VE HAD HELP FROM CHATGPT, SORTING THE QUOTES ON ALPHABETICAL ORDER AND DISPLAYING THEM IN HTML TAGS
+
   Array.from(quotesSet).sort().forEach((quote) => {
     // Get the starting letter of the quote
     const startingLetter = quote.charAt(0).toUpperCase();

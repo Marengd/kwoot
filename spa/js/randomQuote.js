@@ -1,22 +1,23 @@
 // Import necessary modules
 import { $ } from "./modules/helper.js";
 import { fetchQuotes, quotePromises } from "./modules/fetchQuotes.js";
-import { showError } from "./modules/states.js";
+import { showError, hideError } from "./modules/states.js";
 
-// VARS
 
 // LOGIC
 
 // Function to get a random quote
+// NOTE: I'VE HAD HELP FROM CHATGPT, MODIFYING THE ASYNC FUNCTION TO FETCH THE QUOTES, TO STORE THEM IN AN ARRAY.
+
 async function getQuotes(quoteTextfield, quoteButton) {
   // Check if there are any quotes left to fetch, and fetch them if necessary
   if (quotePromises.length === 0) {
-    quotePromises.push(...await fetchQuotes());
+    quotePromises.push(...await fetchQuotes()); // Using the spread operator to ensure we're not pushing an array into another array
   }
 
   // Select a random quote promise from the array
   const quoteIndex = Math.floor(Math.random() * quotePromises.length);
-  const quotePromise = quotePromises.splice(quoteIndex, 1)[0];
+  const quotePromise = quotePromises.splice(quoteIndex, 1)[0]; 
 
   try {
     // Await the resolution of the quote promise
@@ -28,6 +29,7 @@ async function getQuotes(quoteTextfield, quoteButton) {
     let index = 0;
 
     // Function to "type out" the quote one character at a time
+    // NOTE: I'VE HAD HELP FROM CHATGPT, MODIFYING THE TYPE FUNCTION.
     function type() {
       if (index < quote.length) {
         quoteTextfield.innerHTML = `" ${quote.substring(0, index + 1)} ."${cursor}`;
@@ -70,6 +72,6 @@ document.addEventListener('click', function(event) {
   // If the click target is the error message close button, hide the error message
   else if (event.target.closest('#error a')) {
     const errorDiv = $('#error');
-    errorDiv.classList.remove('active'); // WEGHALEN.
+    hideError();
   }
 });
