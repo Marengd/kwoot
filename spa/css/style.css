@@ -891,7 +891,7 @@ main.generator footer ul li:last-child button div svg {
 }
 
 main.generator footer ul li:last-child button div svg.active {
-   fill: red;
+   opacity: .1;
 
    animation: spin 2s linear infinite;
 }
